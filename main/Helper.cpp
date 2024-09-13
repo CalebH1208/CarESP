@@ -5,9 +5,9 @@ dataContainer CreateDataContainer(int length){
     dataContainer ret;
     ret.length = length;
     ret.dataArray =(datapoint*) malloc(sizeof(datapoint)*length);
-    char namesArr[length][30] = {"source\0","MPH\0","RPM\0","Voltage\0","Water Temperature\0","Oil Temperature\0","Oil Pressure\0","Fuel Pressure\0","Pitot Left\0","Pitot Right\0","Pitot Center\0","Manifold Absolute Pressure\0","Lambda\0","Gear Position\0", "Shift Request\0","Neutral Sensor\0","Steering Angle\0","Lat Load\0","Long Load\0","Brake Pressure Front\0","Brake Pressure Rear\0","Damper Pot FL\0","Damper Pot FR\0","Damper pot RL\0","Damper Pot RR\0","Throttle Position\0"};
-    float convArr[length] = {1,.160934,1,.1,.1,.1,0.0145038,1,1,1,1,.0145038,.01,1,1,1,.1,0.00980665012,0.00980665012,0.145038,0.145038,1,1,1,1,.1};
-    char endUnit[length][10] = {"N/A","N/A","N/A","V","F","F","PSI","PSI","PSI","PSI","PSI","PSI","N/A","N/A","N/A","N/A","Degrees","G","G","PSI","PSI","MM","MM","MM","MM","Percent"};
+    char namesArr[length][30] = {"source\0","MPH\0","RPM\0","Voltage\0","Water Temperature\0","Oil Temperature\0","Oil Pressure\0","Fuel Pressure\0","Pitot Left\0","Pitot Right\0","Pitot Center\0","Manifold Absolute Pressure\0","Lambda\0","Gear Position\0", "Shift Request\0","Neutral Sensor\0","Steering Angle\0","Lat Load\0","Long Load\0","Brake Pressure Front\0","Brake Pressure Rear\0","Lat Accel\0","Long Accel\0","Vert Accel\0","Damper Pot RR\0","Throttle Position\0"};
+    float convArr[length] = {1,.160934,1,.1,.1,.1,0.0145038,1,1,1,1,.0145038,.01,1,1,1,.1,0.00980665012,0.00980665012,0.145038,0.145038,1,1,0.145038,1,.1};
+    char endUnit[length][10] = {"N/A","N/A","N/A","V","F","F","PSI","PSI","PSI","PSI","PSI","PSI","N/A","N/A","N/A","N/A","Degrees","G","G","PSI","PSI","MM","MM","G","MM","Percent"};
     for(int i =0;i<length;i++){
     strcpy(ret.dataArray[i].name, namesArr[i]);
     ret.dataArray[i].conv = convArr[i];
@@ -73,16 +73,24 @@ int updateArray(twai_message_t message,dataContainer* DataC){
         DataC->dataArray[20].value = (message.data[6] << 8) | message.data[7];
         return 0;
       case 0x703:
-        DataC->dataArray[21].value = (message.data[0] << 8) | message.data[1];
-        DataC->dataArray[22].value = (message.data[2] << 8) | message.data[3];
-        DataC->dataArray[23].value = (message.data[4] << 8) | message.data[5];
+        //DataC->dataArray[21].value = (message.data[0] << 8) | message.data[1];
+        //DataC->dataArray[22].value = (message.data[2] << 8) | message.data[3];
+        //DataC->dataArray[23].value = (message.data[4] << 8) | message.data[5];
         DataC->dataArray[24].value = (message.data[6] << 8) | message.data[7];
         return 0;
+
       case 0x704:
         DataC->dataArray[25].value = (message.data[0] << 8) | message.data[1];
         DataC->dataArray[13].value = message.data[2];
         DataC->dataArray[15].value = ((message.data[3] & (1))?1:0);
         DataC->dataArray[5].value = (message.data[6] << 8) | message.data[7];
+        return 0;
+      case 0x705:
+        DataC->dataArray[21].value = (message.data[0] << 24) | (message.data[1] << 16) | (message.data[2] << 8) | message.data[3];
+        DataC->dataArray[22].value = (message.data[4] << 24) | (message.data[5] << 16) | (message.data[6] << 8) | message.data[7];
+        return 0;
+      case 0x706:
+        DataC->dataArray[23].value = (message.data[0] << 24) | (message.data[1] << 16) | (message.data[2] << 8) | message.data[3];
         return 0;
        case 0x3f0: //pitot values here
         DataC->dataArray[8].value = (message.data[0] << 8) | message.data[1];
@@ -152,8 +160,10 @@ int updateArrayEV(twai_message_t message,dataContainer* DataC){
 int LoRaSend(dataContainer DataArray,RFM96 radio){
 uint8_t sendArray[DataArray.length*2] = {0};
 for(int i=0;i<DataArray.length;i++){
+  if(DataArray.dataArray[i].value/256 <65535){
   sendArray[2*i]=(DataArray.dataArray[i].value/256);
   sendArray[2*i+1]=(DataArray.dataArray[i].value%256);
+  }
 }
 radio.transmit(sendArray,DataArray.length*2);
 return 0;
@@ -377,7 +387,7 @@ dataString = buf;
 quickestSDWrite(fptr,dataString);
 if(params->loggingPeriodHz != -1){
 vTaskDelay((1000/params->loggingPeriodHz)/portTICK_PERIOD_MS);
-if(i>(50000/(1000/params->loggingPeriodHz))){
+if(i>(5000/(1000/params->loggingPeriodHz))){
   fclose(fptr);
   fptr = fopen(params->path,"a");
   i = 0;

@@ -25,7 +25,7 @@ RFM96 radio = new Module(hal, NSS, DIO0, NRST, DIO1);
 static const char *TAG = "main";
 
 //comment out this line for IC firmware other wise leave for EV firmware
-#define EV 1
+//#define EV 1
 
 #ifdef EV
 #define LENGTH 26
