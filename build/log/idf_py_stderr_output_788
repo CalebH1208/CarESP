@@ -1,0 +1,46 @@
+CMake Error at C:/esp/esp-idf/tools/cmake/build.cmake:552 (message):
+  Traceback (most recent call last):
+
+    File "<frozen runpy>", line 198, in _run_module_as_main
+    File "<frozen runpy>", line 88, in _run_code
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\prepare_components\__main__.py", line 6, in <module>
+      main()
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\prepare_components\prepare.py", line 130, in main
+      args.func(args)
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\prepare_components\prepare.py", line 29, in prepare_dep_dirs
+      ).prepare_dep_dirs(
+        ^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\core.py", line 98, in wrapper
+      return func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\core.py", line 757, in prepare_dep_dirs
+      downloaded_components = download_project_dependencies(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\dependencies.py", line 333, in download_project_dependencies
+      solution = solver.solve()
+                 ^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\version_solver\version_solver.py", line 154, in solve
+      return self._solve(cur_solution=self.old_solution)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\version_solver\version_solver.py", line 116, in _solve
+      self.solve_manifest(manifest, cur_solution=cur_solution)
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\version_solver\version_solver.py", line 176, in solve_manifest
+      self.solve_component(dep, manifest_path=manifest.path, cur_solution=cur_solution)
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_manager\version_solver\version_solver.py", line 204, in solve_component
+      cmp_with_versions = requirement.source.versions(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_tools\sources\web_service.py", line 145, in versions
+      cmp_with_versions = client.versions(component_name=self.normalized_name(name), spec=spec)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_tools\registry\multi_storage_client.py", line 91, in versions
+      cmp_with_versions.merge(_cmp_with_versions)
+    File "C:\tools\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\idf_component_tools\utils.py", line 361, in merge
+      raise ValueError('Cannot merge different components')
+
+  ValueError: Cannot merge different components
+
+Call Stack (most recent call first):
+  C:/esp/esp-idf/tools/cmake/project.cmake:605 (idf_build_process)
+  CMakeLists.txt:8 (project)
+
+

@@ -1,0 +1,24 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM6 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM6 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081284: call_start_cpu1 at C:/esp/esp-idf/components/esp_system/port/cpu_start.c:159
+[0m
+[0;33m0x400ef500: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:849 (discriminator 14)
+[0m
+[0;33m0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m0x400ef4fd: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:849 (discriminator 14)
+0x400e7c85: fprintf at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/fprintf.c:54
+0x400d7699: quickestSDWrite(__sFILE*, char*) at C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:269
+0x400d7754: DataLoggingTaskManager(void*) at C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:377
+0x40086721: vPortTaskWrapper at C:/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081284: call_start_cpu1 at C:/esp/esp-idf/components/esp_system/port/cpu_start.c:159
+[0m
+[0m

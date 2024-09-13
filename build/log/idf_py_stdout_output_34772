@@ -1,0 +1,68 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\esp\esp-idf\myProjects\Can2LoraV1.3.0Dumb\build\bootloader\esp-idf\esptool_py && C:\tools\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe C:/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6870 bytes. 0x790 bytes (7%) free.
+[2/8] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/Helper.cpp.obj
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'void canRecieveTask(void*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:183:9: warning: unused variable 'EC' [-Wunused-variable]
+  183 |     int EC = updateArray(message,(((passVariables *)passMe)->data));
+      |         ^~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'void canRecieveTaskEV(void*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:191:9: warning: unused variable 'EC' [-Wunused-variable]
+  191 |     int EC = updateArrayEV(message,(((passVariables *)passMe)->data));
+      |         ^~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'sdmmc_card_t* setupSD(int*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:212:5: warning: missing initializer for member 'esp_vfs_fat_mount_config_t::disk_status_check_enable' [-Wmissing-field-initializers]
+  212 |     };
+      |     ^
+In file included from C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.h:2,
+                 from C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:1:
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h: At global scope:
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:4:14: warning: 'void configure_CAN()' declared 'static' but never defined [-Wunused-function]
+    4 |  static void configure_CAN();
+      |              ^~~~~~~~~~~~~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:5:13: warning: 'int send_CAN(uint32_t, uint8_t, uint8_t*)' declared 'static' but never defined [-Wunused-function]
+    5 |  static int send_CAN(uint32_t ID,uint8_t len,uint8_t * data);
+      |             ^~~~~~~~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:6:24: warning: 'twai_message_t recieve_CAN()' declared 'static' but never defined [-Wunused-function]
+    6 |  static twai_message_t recieve_CAN();
+      |                        ^~~~~~~~~~~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:9:14: warning: 'void configure_CANEV()' declared 'static' but never defined [-Wunused-function]
+    9 |  static void configure_CANEV();
+      |              ^~~~~~~~~~~~~~~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:9:14: warning: 'void configure_CANEV()' used but never defined
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:6:24: warning: 'twai_message_t recieve_CAN()' used but never defined
+    6 |  static twai_message_t recieve_CAN();
+      |                        ^~~~~~~~~~~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.h:4:14: warning: 'void configure_CAN()' used but never defined
+    4 |  static void configure_CAN();
+      |              ^~~~~~~~~~~~~
+[3/8] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+In file included from C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/main.cpp:10:
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'void canRecieveTask(void*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:183:9: warning: unused variable 'EC' [-Wunused-variable]
+  183 |     int EC = updateArray(message,(((passVariables *)passMe)->data));
+      |         ^~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'void canRecieveTaskEV(void*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:191:9: warning: unused variable 'EC' [-Wunused-variable]
+  191 |     int EC = updateArrayEV(message,(((passVariables *)passMe)->data));
+      |         ^~
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp: In function 'sdmmc_card_t* setupSD(int*)':
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/Helper.cpp:212:5: warning: missing initializer for member 'esp_vfs_fat_mount_config_t::disk_status_check_enable' [-Wmissing-field-initializers]
+  212 |     };
+      |     ^
+In file included from C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/main.cpp:9:
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.c: At global scope:
+C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/main/can.c:47:12: warning: 'int send_CAN(uint32_t, uint8_t, uint8_t*)' defined but not used [-Wunused-function]
+   47 | static int send_CAN(uint32_t ID,uint8_t len,uint8_t * data){
+      |            ^~~~~~~~
+[4/8] Linking C static library esp-idf\main\libmain.a
+[5/8] Generating ld/sections.ld
+[6/8] Linking CXX executable Can2LoraV1.2.5.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/build/Can2LoraV1.2.5.bin
+[8/8] cmd.exe /C "cd /D C:\esp\esp-idf\myProjects\Can2LoraV1.3.0Dumb\build\esp-idf\esptool_py && C:\tools\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe C:/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/build/partition_table/partition-table.bin C:/esp/esp-idf/myProjects/Can2LoraV1.3.0Dumb/build/Can2LoraV1.2.5.bin"
+Can2LoraV1.2.5.bin binary size 0x4b660 bytes. Smallest app partition is 0x100000 bytes. 0xb49a0 bytes (71%) free.

@@ -1,0 +1,227 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7128
+load:0x40078000,len:15624
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1.4-700-ge026fd1f81 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Aug 31 2024 14:15:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0dc3ch ( 56380) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=0001dc64 vaddr=3ffb0000 size=02200h (  8704) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=0001fe6c vaddr=40080000 size=001ach (   428) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=2af1ch (175900) map[0m
+[0;32mI (202) esp_image: segment 4: paddr=0004af44 vaddr=400801ac size=0c3d4h ( 50132) load[0m
+[0;32mI (229) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (229) boot: Disabling RNG early entropy source...[0m
+[0;32mI (241) cpu_start: Multicore app[0m
+[0;32mI (241) cpu_start: Pro cpu up.[0m
+[0;32mI (241) cpu_start: Starting app cpu, entry point is 0x40081284[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (259) cpu_start: Pro cpu start user code[0m
+[0;32mI (259) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (259) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     Can2LoraV1.2.5[0m
+[0;32mI (270) cpu_start: App version:      445b1c5[0m
+[0;32mI (274) cpu_start: Compile time:     Sep  1 2024 20:06:35[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  35952da0...[0m
+[0;32mI (286) cpu_start: ESP-IDF:          v5.1.4-700-ge026fd1f81[0m
+[0;32mI (292) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (297) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FFB2D30 len 0002D2D0 (180 KiB): DRAM[0m
+[0;32mI (326) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (339) heap_init: At 4008C580 len 00013A80 (78 KiB): IRAM[0m
+[0;32mI (346) spi_flash: detected chip: generic[0m
+[0;32mI (350) spi_flash: flash io: dio[0m
+[0;33mW (353) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (367) app_start: Starting scheduler on CPU0[0m
+[0;32mI (372) app_start: Starting scheduler on CPU1[0m
+[0;32mI (372) main_task: Started on CPU0[0m
+[0;32mI (382) main_task: Calling app_main()[0m
+[0;32mI (385) main: Initializing LoRa... [0m
+[0;32mI (390) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (399) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) gpio: GPIO[23]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (426) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (436) gpio: GPIO[34]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (445) gpio: GPIO[27]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (464) main: success!
+[0m
+[0;32mI (464) CAN: CANLED initialized[0m
+[0;32mI (465) : 0[0m
+[0;32mI (465) : 0[0m
+[0;32mI (465) : 0[0m
+[0;32mI (467) : 0[0m
+[0;32mI (469) : 0[0m
+[0;32mI (472) : 0[0m
+[0;31mE (502) sdmmc_common: sdmmc_init_ocr: send_op_cond (1) returned 0x107[0m
+[0;31mE (503) vfs_fat_sdmmc: sdmmc_card_init failed (0x107).[0m
+[0;32mI (504) SDMOUNT: SDMOUNT FAILED[0m
+[0;32mI (508) perfmon: Core 0 at 100%[0m
+[0;32mI (512) perfmon: Core 1 at 100%[0m
+[0;32mI (510) gpio: GPIO[22]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (526) gpio: GPIO[21]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (534) CAN: Driver initialized
+ [0m
+[0;32mI (538) CAN: Driver started
+ [0m
+[0;32mI (5516) perfmon: Core 0 at 11%[0m
+[0;32mI (5516) perfmon: Core 1 at 41%[0m
+[0;32mI (10516) perfmon: Core 0 at 11%[0m
+[0;32mI (10516) perfmon: Core 1 at 40%[0m
+[0;32mI (15516) perfmon: Core 0 at 11%[0m
+[0;32mI (15516) perfmon: Core 1 at 40%[0m
+[0;32mI (20516) perfmon: Core 0 at 11%[0m
+[0;32mI (20516) perfmon: Core 1 at 40%[0m
+[0;32mI (25516) perfmon: Core 0 at 11%[0m
+[0;32mI (25516) perfmon: Core 1 at 41%[0m
+[0;32mI (30516) perfmon: Core 0 at 11%[0m
+[0;32mI (30516) perfmon: Core 1 at 41%[0m
+[0;32mI (35516) perfmon: Core 0 at 11%[0m
+[0;32mI (35516) perfmon: Core 1 at 40%[0m
+����������������������������������������������������������������;32mI (40516) perfmon: Core 0 at 11%[0m
+[0;32mI (40516) perfmon: Core 1 at 40%[0m
+[0;32mI (45516) perfmon: Core 0 at 11%[0m
+[0;32mI (45516) perfmon: Core 1 at 40%[0m
+[0;32mI (50516) perfmon: Core 0 at 11%[0m
+[0;32mI (50516) perfmon: Core 1 at 41%[0m
+[0;32mI (55516) perfmon: Core 0 at 11%[0m
+[0;32mI (55516) perfmon: Core 1 at 40%[0m
+[0;32mI (60516) perfmon: Core 0 at 11%[0m
+[0;32mI (60516) perfmon: Core 1 at 40%[0m
+[0;32mI (65516) perfmon: Core 0 at 11%[0m
+[0;32mI (65516) perfmon: Core 1 at 40%[0m
+����������������������������������������������������������������0;32mI (70516) perfmon: Core 0 at 11%[0m
+[0;32mI (70516) perfmon: Core 1 at 41%[0m
+[0;32mI (75516) perfmon: Core 0 at 11%[0m
+[0;32mI (75516) perfmon: Core 1 at 41%[0m
+[0;32mI (80516) perfmon: Core 0 at 11%[0m
+[0;32mI (80516) perfmon: Core 1 at 40%[0m
+[0;32mI (85516) perfmon: Core 0 at 11%[0m
+[0;32mI (85516) perfmon: Core 1 at 40%[0m
+[0;32mI (90516) perfmon: Core 0 at 11%[0m
+[0;32mI (90516) perfmon: Core 1 at 40%[0m
+[0;32mI (95516) perfmon: Core 0 at 11%[0m
+[0;32mI (95516) perfmon: Core 1 at 41%[0m
+[0;32mI (100516) perfmon: Core 0 at 11%[0m
+[0;32mI (100516) perfmon: Core 1 at 40%[0m
+[0;32mI (105516) perfmon: Core 0 at 11%[0m
+[0;32mI (105516) perfmon: Core 1 at 40%[0m
+[0;32mI (110516) perfmon: Core 0 at 11%[0m
+[0;32mI (110516) perfmon: Core 1 at 40%[0m
+[0;32mI (115516) perfmon: Core 0 at 11%[0m
+[0;32mI (115516) perfmon: Core 1 at 41%[0m
+[0;32mI (120516) perfmon: Core 0 at 11%[0m
+[0;32mI (120516) perfmon: Core 1 at 41%[0m
+[0;32mI (125516) perfmon: Core 0 at 11%[0m
+[0;32mI (125516) perfmon: Core 1 at 40%[0m
+[0;32mI (130516) perfmon: Core 0 at 11%[0m
+[0;32mI (130516) perfmon: Core 1 at 40%[0m
+[0;32mI (135516) perfmon: Core 0 at 11%[0m
+[0;32mI (135516) perfmon: Core 1 at 40%[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7128
+load:0x40078000,len:15624
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1.4-700-ge026fd1f81 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Aug 31 2024 18:57:51[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a8d4h ( 43220) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a8fc vaddr=3ffb0000 size=02170h (  8560) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001ca74 vaddr=40080000 size=035a4h ( 13732) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=195cch (103884) map[0m
+[0;32mI (171) esp_image: segment 4: paddr=000395f4 vaddr=400835a4 size=08b94h ( 35732) load[0m
+[0;32mI (192) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (193) boot: Disabling RNG early entropy source...[0m
+[0;32mI (204) cpu_start: Multicore app[0m
+[0;32mI (204) cpu_start: Pro cpu up.[0m
+[0;32mI (205) cpu_start: Starting app cpu, entry point is 0x400811cc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (222) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (222) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     Can2LoraV1[0m
+[0;32mI (232) cpu_start: App version:      4cf41c0-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Aug 31 2024 18:57:37[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  b55ad1d9...[0m
+[0;32mI (249) cpu_start: ESP-IDF:          v5.1.4-700-ge026fd1f81[0m
+[0;32mI (255) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (260) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (265) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (270) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (277) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (283) heap_init: At 3FFB2B88 len 0002D478 (181 KiB): DRAM[0m
+[0;32mI (289) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (302) heap_init: At 4008C138 len 00013EC8 (79 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (313) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (331) app_start: Starting scheduler on CPU0[0m
+[0;32mI (335) app_start: Starting scheduler on CPU1[0m
+[0;32mI (335) main_task: Started on CPU0[0m
+[0;32mI (345) main_task: Calling app_main()[0m
+[0;32mI (345) perfmon: Core 0 at 100%[0m
+[0;32mI (345) main: Initializing LoRa... [0m
+[0;32mI (345) perfmon: Core 1 at 100%[0m
+[0;32mI (355) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (345) main: HIIIIIIIIIII 0[0m
+[0;32mI (365) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (375) gpio: GPIO[23]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (385) gpio: GPIO[5]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (395) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (405) gpio: GPIO[34]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (415) gpio: GPIO[27]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (435) main: success!
+[0m
+[0;32mI (1365) main: HIIIIIIIIIII 0[0m
+[0;32mI (2365) main: HIIIIIIIIIII 0[0m
+[0;32mI (2435) main: HIIIIIIIIIII 0[0m
+[0;32mI (3365) main: HIIIIIIIIIII 0[0m
+[0;32mI (4365) main: HIIIIIIIIIII 0[0m
+[0;32mI (4435) main: HIIIIIIIIIII 0[0m
+[0;32mI (5355) perfmon: Core 0 at 14%[0m
+[0;32mI (5355) perfmon: Core 1 at 16%[0m
+[0;32mI (5365) main: HIIIIIIIIIII 0[0m
+[0;32mI (6365) main: HIIIIIIIIIII 0[0m
+[0;32mI (6435) main: HIIIIIIIIIII 0[0m
+[0;32mI (7365) main: HIIIIIIIIIII 0[0m
